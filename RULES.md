@@ -8,8 +8,10 @@ any agent that reads instruction files. Scripts are bash (macOS/Linux).
 
 1. Is the task about **software we did not write** (competitor repo, upstream
    package, any open-source project) and the goal is to **understand it so we
-   can build our own version** → **Mode 2 teardown** (`skills/teardown/SKILL.md`).
-   Read-only. Evidence = `file:line` citations. Output = proposal docs.
+   can build our own version** → **Mode 2 teardown → REBUILD**
+   (`skills/teardown/SKILL.md`). Read-only against the target; then BUILD our
+   version in `/Users/bishesha/projects/<name>` — scaffold, implement the
+   Paths, run checks, review round (loop skill), ship. Advice-only is opt-in.
 2. Otherwise, is it **security RE / pentest / CTF** on an authorized target
    (own system, CTF platform, lab, written engagement) → **Mode 1**.
 3. Neither → it is not a reverse-skill task. Do not force it.

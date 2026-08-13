@@ -30,7 +30,7 @@ software we did not write. This is the mode this skill was rebuilt for.
    - in_scope.assets = [target repo URL or path, feature area under study]
    - network_profile = offline (or authorized_target_only if the analysis
      needs to fetch the repo — fetching the repo itself is in scope)
-   - activities = [read_only_analysis]
+   - activities = [read_only_analysis, rebuild_execution]
 2. **Clone & orient** (E-001): clone to `work/<case>/target/` at a pinned
    commit (`git clone … && git checkout <sha>` — record the sha as evidence).
    Inventory: top-level layout, README claims, entry points
@@ -46,8 +46,10 @@ software we did not write. This is the mode this skill was rebuilt for.
    missing (opportunity). Each with evidence citations.
 6. **Paths**: for each Finding, write the Path: what WE build (files to create
    in our project), key decisions, risks, effort (s/m/l), and why it beats the
-   target for our use case.
-7. **Report**: one markdown file per area:
+   target for our use case. **The Paths are the spec.**
+7. **BUILD IT**: execute the Paths now — scaffold, implement, check, review,
+   ship (see "Execution — actually build it" below). Do NOT stop at Paths.
+8. **Report**: one markdown file per area:
    `docs/competitive/proposals/<area>-YYYYMMDD.md` — format:
 
 ```markdown
@@ -74,6 +76,26 @@ P-1 … P-2 …
 - Findings with file:line evidence
 - Paths (what we build) — the actual value of the exercise
 - Proposal doc per area under `docs/competitive/proposals/`
+
+## Execution — actually build it (owner default, not advice)
+
+The teardown is NOT the deliverable. After Paths are written, **build the thing**:
+
+1. **Scaffold** the project at `/Users/bishesha/projects/<name>` (per business
+   memory: all code lives there, kebab-case names). One parent, fewest files.
+2. **Implement each Path** in order. Reuse existing helpers first; add only what
+   the Paths require. No gold-plating.
+3. **Leave one runnable check** per non-trivial module (assert-based self-check
+   or one small test — no frameworks).
+4. **Run the check** — fix until it passes. This is the round-1 evidence.
+5. **Independent review round** (loop skill): a fresh-context reviewer checks
+   the build against the Paths; fix its findings; repeat up to 4 rounds.
+6. **Ship**: commit + push to a private repo on the owner's GitHub (default),
+   unless the owner says otherwise.
+7. **Report** what was built, what passed, what's deliberately out of scope.
+
+Proposal-only mode is opt-in: only if the owner explicitly asks for "just the
+plan / advice only".
 
 ## Boundaries
 - Never modify the target; never copy code wholesale without license

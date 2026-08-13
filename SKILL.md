@@ -24,18 +24,22 @@ task → RULES.md → MASTER-ROUTING.md (or bash skills/scripts/master-route.sh 
 - Windows-only upstream modules (IDA Pro, Burp MCP, dnSpy, EDR bypass, AD…) are
   intentionally NOT ported — see `docs/UPSTREAM-ANALYSIS.md`.
 
-### Mode 2 — Competitive open-source teardown (our primary use)
+### Mode 2 — Competitive teardown → REBUILD (our primary mode, owner default)
 
-The same workflow shape, applied to competitor / upstream code:
+The same workflow shape, applied to competitor / upstream code — and it does
+NOT stop at advice: it ends with a real build.
 
 - **case-init**: declare the target repo + the feature area under study
-- **scope**: read-only; we never modify the target's code
+- **scope**: read-only analysis of the target; our rebuild lives in
+  `/Users/bishesha/projects/<name>`
 - **methodology**: read the module that maps to the feature area (their router,
   renderer, pipeline), not the whole repo
 - **evidence**: every Finding cites `file:line` or a commit hash
 - **Finding → Path**: each finding ends with a concrete Path — what WE should
   build, which files, which risks, why it fits our needs
-- **report**: one markdown file per area under `docs/competitive/proposals/`
+- **BUILD**: execute the Paths — scaffold, implement, run the check, one
+  independent review round (see `loop` skill), fix, commit, push to a private
+  repo. Proposal-only is opt-in, never the default.
 
 Security modules (Frida/jadx/Burp/CTF) are irrelevant for mode 2 — do not
 suggest them for readable open-source code analysis.

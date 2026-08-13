@@ -23,11 +23,14 @@ task → RULES.md → master-route.sh (routing.json = single source of truth)
 
 1. **Security RE / pentest / CTF** (authorized targets only) — APK, JS, binary,
    malware, pentest, pwn, firmware, CTF playbooks.
-2. **Competitive open-source teardown** — read-only analysis of software we did
-   not write: evidence with `file:line` citations → Finding → Path (what WE
-   should build) → proposal docs under `docs/competitive/proposals/`.
+2. **Competitive teardown → rebuild** — read-only analysis of software we did
+   not write (evidence with `file:line` citations → Finding → Path), then we
+   **actually build** our own version per the Paths (scaffold, implement,
+   check, review, ship to a private repo). Proposals are opt-in; building is
+   the default.
 
-See `SKILL.md` for the full mode descriptions.
+See `SKILL.md` for the full mode descriptions. Big builds iterate with the
+`loop` skill (build → review → fix rounds until done-criteria pass).
 
 ## Layout
 
