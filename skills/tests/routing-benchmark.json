@@ -1,0 +1,42 @@
+{
+  "meta": {
+    "description": "reverse-skill routing regression cases. test-routing.sh runs each hint through master-route.sh and compares the PRIMARY id. Add a case whenever a route changes."
+  },
+  "cases": [
+    { "hint": "decompile this APK with jadx", "expect": "R1" },
+    { "hint": "apk 反编译 smali 修改", "expect": "R1" },
+    { "hint": "frida hook android app", "expect": "R1" },
+    { "hint": "certificate pinning bypass analysis", "expect": "R1" },
+    { "hint": "重打包 APK 签名校验", "expect": "R1" },
+    { "hint": "js reverse webpack encrypted params", "expect": "R2" },
+    { "hint": "前端签名 加密参数 逆向", "expect": "R2" },
+    { "hint": "抓包 请求重放 分析签名链路", "expect": "R2" },
+    { "hint": "sourcemap 还原前端代码", "expect": "R2" },
+    { "hint": "analyze this .so with radare2", "expect": "R3" },
+    { "hint": "ghidra 反汇编 elf 二进制", "expect": "R3" },
+    { "hint": "mach-o dylib stripped binary analysis", "expect": "R3" },
+    { "hint": "加壳程序 脱壳 unpack", "expect": "R3" },
+    { "hint": "malware sample yara analysis", "expect": "R4" },
+    { "hint": "勒索软件 恶意样本 静态分析", "expect": "R4" },
+    { "hint": "nmap 端口扫描 渗透测试", "expect": "R5" },
+    { "hint": "nuclei 漏洞扫描 web fuzz", "expect": "R5" },
+    { "hint": "sqlmap sql 注入测试", "expect": "R5" },
+    { "hint": "ctf pwn 栈溢出 rop", "expect": "R6" },
+    { "hint": "heap overflow use after free exploit", "expect": "R6" },
+    { "hint": "binwalk 固件提取 分析", "expect": "R7" },
+    { "hint": "router firmware iot 分析", "expect": "R7" },
+    { "hint": "ctf web challenge", "expect": "R8" },
+    { "hint": "攻防演练 awd", "expect": "R8" },
+    { "hint": "写渗透测试报告", "expect": "R9" },
+    { "hint": "generate the report for the case", "expect": "R9" },
+    { "hint": "review case evidence chain", "expect": "R10" },
+    { "hint": "证据链 审查 case", "expect": "R10" },
+    { "hint": "teardown competitor repo so we can rebuild", "expect": "R11" },
+    { "hint": "拆解竞品开源项目 分析", "expect": "R11" },
+    { "hint": "reverse engineer this github repo to rebuild our own version", "expect": "R11" },
+    { "hint": "upstream package analysis", "expect": "R11" },
+    { "hint": "unknown binary 源码还原", "expect": "R0" },
+    { "hint": "通用逆向 反调试", "expect": "R0" },
+    { "hint": "help me write a shopping list", "expect": "R0" }
+  ]
+}

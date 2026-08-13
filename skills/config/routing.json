@@ -1,0 +1,138 @@
+{
+  "schemaVersion": "1.0",
+  "meta": {
+    "description": "reverse-skill routing single source of truth. master-route.sh reads ONLY this file. Priority order = tie-break order (earlier wins). No match → fallbackId.",
+    "fallbackId": "R0"
+  },
+  "routes": {
+    "R1": {
+      "label": "APK / Android reverse",
+      "skill": "apk-reverse/SKILL.md",
+      "keywords": [
+        {
+          "must": "\\bapk\\b|\\.aab\\b|smali|jadx|apktool|\\bandroid\\b|安卓|重打包|frida|root.?detect|root.?检测|证书.?校验|certificate.?pinning|pinning.?绕过|签名.?校验"
+        },
+        {
+          "must": "反编译|decompile",
+          "mustAll": [
+            "apk|android|安卓|smali|dex"
+          ]
+        }
+      ]
+    },
+    "R2": {
+      "label": "Frontend JS reverse",
+      "skill": "js-reverse/SKILL.md",
+      "keywords": [
+        {
+          "must": "js.?reverse|js.?逆向|前端签名|加密参数|javascript|webpack|vite|source.?map|js.?hook|jshook|js.?混淆|js.?obfuscat|签名链路|请求参数|抓包|packet.?capture|request.?replay|cdn.?混淆"
+        }
+      ]
+    },
+    "R3": {
+      "label": "Binary reverse (radare2/Ghidra)",
+      "skill": "binary-re/SKILL.md",
+      "keywords": [
+        {
+          "must": "radare2|\\br2\\b|ghidra|反汇编|disassembl|\\.elf\\b|\\.so\\b|\\.dylib\\b|\\.exe\\b|\\.dll\\b|mach-o|binary.?analysis|二进制|native.?hook|\\bjni\\b|stripped|符号还原|ida.?pro|加壳|脱壳|unpack|ollvm|arm64|aarch64|x86.?64|golang.?binary|rust.?binary"
+        }
+      ]
+    },
+    "R4": {
+      "label": "Malware analysis",
+      "skill": "malware-analysis/SKILL.md",
+      "keywords": [
+        {
+          "must": "malware|恶意|yara|virus.?total|沙箱|sandbox|木马|trojan|ransomware|勒索|botnet|c2.?config|banker|stealer|rootkit|恶意软件"
+        }
+      ]
+    },
+    "R5": {
+      "label": "Pentest tooling",
+      "skill": "pentest-tools/SKILL.md",
+      "keywords": [
+        {
+          "must": "pentest|渗透|nmap|nuclei|sqlmap|ffuf|port.?scan|端口扫描|漏洞扫描|vuln.?scan|hydra|hashcat|burp|目录爆破|dirsearch|gobuster|waf|bug.?bounty|众测|src.?挖掘|metasploit|recon|子域|subdomain|fuzz|sql.?注入|ssrf|idor",
+          "exclude": "report|报告|writeup"
+        }
+      ]
+    },
+    "R6": {
+      "label": "Pwn / exploit dev",
+      "skill": "pwn-chain/SKILL.md",
+      "keywords": [
+        {
+          "must": "\\bpwn\\b|栈溢出|堆溢出|heap.?overflow|stack.?overflow|\\brop\\b|ret2libc|pwntools|shellcode|kernel.?pwn|格式化字符串|format.?string|use.?after.?free|double.?free|\\buaf\\b|canary|ret2dl|ret2plt"
+        }
+      ]
+    },
+    "R7": {
+      "label": "Firmware / IoT",
+      "skill": "firmware-pentest/SKILL.md",
+      "keywords": [
+        {
+          "must": "firmware|固件|binwalk|unblob|squashfs|\\biot\\b|路由器|router|emba|uart|jtag|uboot|vxworks|modbus|路由器固件"
+        }
+      ]
+    },
+    "R8": {
+      "label": "CTF",
+      "skill": "ctf/SKILL.md",
+      "keywords": [
+        {
+          "must": "\\bctf\\b|靶场|writeup|攻防|awd|ctf.?challenge|flag"
+        }
+      ]
+    },
+    "R9": {
+      "label": "Docs / report generation",
+      "skill": "docs-generator/SKILL.md",
+      "keywords": [
+        {
+          "must": "report|报告|writeup|技术文档|pentest.?report|总结文档|汇报"
+        }
+      ]
+    },
+    "R10": {
+      "label": "Case / evidence review",
+      "skill": "case-review/SKILL.md",
+      "keywords": [
+        {
+          "must": "case.?review|evidence|证据链|证据|review_case|scope.?review|finding.?review|case.?审查"
+        }
+      ]
+    },
+    "R11": {
+      "label": "Competitive teardown",
+      "skill": "teardown/SKILL.md",
+      "keywords": [
+        {
+          "must": "teardown|拆解|竞品|competitor|competitive|\\bupstream\\b|open.?source.?analysis|开源.?分析|逆向.*(仓库|项目|开源)|reverse.*(repo|github|project|package)|repo.?analysis|rebuild.*(repo|project)"
+        }
+      ]
+    },
+    "R0": {
+      "label": "General reverse engineering",
+      "skill": "reverse-engineering/SKILL.md",
+      "keywords": [
+        {
+          "must": "reverse|逆向|decompile|\\.bin\\b|\\.dat\\b|unknown.?binary|源码还原|source.?recovery|game.?reverse|反调试|anti.?debug|静态分析|动态分析|通用逆向"
+        }
+      ]
+    }
+  },
+  "priority": [
+    "R1",
+    "R2",
+    "R3",
+    "R4",
+    "R5",
+    "R6",
+    "R7",
+    "R8",
+    "R11",
+    "R10",
+    "R9",
+    "R0"
+  ]
+}

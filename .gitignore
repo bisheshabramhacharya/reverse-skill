@@ -1,0 +1,13 @@
+# case artifacts (per-task working dirs)
+work/
+
+# auto-generated tool index (machine-specific)
+skills/tool-index.md
+skills/tool-index.json
+
+# python
+__pycache__/
+*.pyc
+
+# macOS
+.DS_Store
